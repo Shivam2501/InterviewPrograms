@@ -1,3 +1,6 @@
+/*
+Program to print the matched parenthesis.
+*/
 #include <stack>
 #include <iostream>
 #include <string>
