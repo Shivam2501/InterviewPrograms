@@ -42,7 +42,7 @@ public:
 	bool set(string key,int value); //store an element
 	bool check(string key); //check if the key exists in the table
 	int get(string key);	//return the value associated with a given key
-	int pop(string key);	//delete the value associated with a given key
+	int delete_(string key);	//delete the value associated with a given key
 	int function(string key); // hash function
 	float load();		// calculuate load factor
 	~HashTable(){		//destructor to free the memory
@@ -97,7 +97,7 @@ int HashTable::get(string key){
 	}
 	return 0;
 }
-int HashTable::pop(string key){
+int HashTable::delete_(string key){
 	int find=function(key);		//call hash function to find the index
 	Linkedlist *temp;
 
@@ -139,7 +139,7 @@ int main(){
 	while(1){
 		cout<<"1. Insert element into the table"<<endl;
         cout<<"2. Search element from the key"<<endl;
-        cout<<"3. Delete element at a key"<<endl;
+        cout<<"3. Delete element from a key"<<endl;
         cout<<"4. Load factor"<<endl;
         cout<<"Any other key to exit"<<endl;
         cout<<"Enter your choice: ";
@@ -167,7 +167,7 @@ int main(){
         	case 3: cout<<"Enter the key: ";	
         			cin>>key;
         			if(hash.check(key)==true){		//check if key exists in the table
-        				out=hash.pop(key);
+        				out=hash.delete_(key);
         				cout<<"The value is: "<<out<<endl;
         			}
         			else

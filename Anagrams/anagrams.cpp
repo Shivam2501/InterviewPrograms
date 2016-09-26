@@ -32,5 +32,4 @@ for(std::list<pair<string,int> >::iterator it=mylist.begin(); it!=mylist.end(); 
 	cout<<s[p.second];
 }
 
-
 }
